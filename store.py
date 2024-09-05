@@ -23,10 +23,10 @@ data_mamie = int(data_mamie)
 
 def mamie(): 
     global cookie
-    cookieseconde = 10 * int(data_mamie)
+    cookieseconde = 1 * int(data_mamie)
     cookie += cookieseconde
     counter.config(text='Nombre de cookies : ' + str(cookie))
-    root.after(10000, mamie)
+    root.after(1000, mamie)
 
 def achat():
     global cookie
@@ -49,7 +49,7 @@ def save():
     fichier.close()
     fichier_mamie.close()
     root.destroy()
-    os.system('python main.py')
+    os.system('python3 main.py')
     
 root.protocol("WM_DELETE_WINDOW", save) # permet d'executer la fonction quitandsave lors de la fermeture de la fenetre
 
@@ -62,12 +62,12 @@ counter_mamie = Label(root, text='Nombre de mamie : ' + str(data_mamie))
 counter_mamie.pack()    
 
 button_mamie=Button(root, image=imagemamie, command=achat)
-Label(root, text='Acheté une mamie qui vous fera 10 cookie en 10 seconde\n 500 cookie').pack()
+Label(root, text='Acheté une mamie qui vous fera 1 cookie par seconde\n 500 cookie').pack()
 button_mamie.pack()
 
 
 
-root.after(10000, mamie)
+root.after(1000, mamie)
 fichier.close()
 fichier_mamie.close()
 root.mainloop()

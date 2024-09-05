@@ -20,10 +20,10 @@ data_mamie = fichier_mamie.read()
 
 def mamie(): 
     global cookie
-    cookieseconde = 10 * int(data_mamie)
+    cookieseconde = 1 * int(data_mamie)
     cookie += cookieseconde
     counter.config(text='Nombre de cookies : ' + str(cookie))
-    fenetre.after(10000, mamie)
+    fenetre.after(1000, mamie)
     
 
 def onclick():
@@ -43,7 +43,7 @@ def quitandsave():
 
 def store():
     quitandsave()
-    os.system('python store.py')
+    os.system('python3 store.py')
 
 
 fenetre.protocol("WM_DELETE_WINDOW", quitandsave) # permet d'executer la fonction quitandsave lors de la fermeture de la fenetre
@@ -62,7 +62,7 @@ bouttonstore=Button(fenetre, text="store", command=store)
 bouttonstore.pack()
 bouttonstore.place(x=463, y=475)
 
-fenetre.after(10000, mamie)
+fenetre.after(1000, mamie)
 fenetre.mainloop()
 fichier.close()
 fichier_mamie.close()
